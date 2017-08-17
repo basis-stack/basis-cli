@@ -1,17 +1,28 @@
 import clear from 'clear';
 
-import { banner } from './src/messages';
+import { banner, status } from './src/messages';
 import { getCurrentDirectoryBase } from './src/fsUtils';
 import { getArgs, getAnswers } from './src/userInput';
 import download from './src/download';
+import initialise from './src/initialise';
 
 clear();
 banner();
 
-const args = getArgs();
-const basePath = getCurrentDirectoryBase();
+// const args = getArgs();
+// const basePath = getCurrentDirectoryBase();
 
-getAnswers(basePath).then((answers) => {
+getAnswers().then((answers) => {
 
-  download(answers.targetPath);
+  download(answers.targetPath).then(() => {
+
+    initialise(answers).then(() => {
+
+      status('Complete\n');
+    });
+  })
+  .catch(() => {
+
+    status('Failed\n', false);
+  });
 });

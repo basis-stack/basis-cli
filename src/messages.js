@@ -1,5 +1,6 @@
 import chalk from 'chalk';
 import figlet from 'figlet';
+import figures from 'figures';
 
 const colours = {
   yellow: 'yellow',
@@ -22,6 +23,7 @@ export const banner = () => {
 export const status = (message, success = true) => {
 
   const colour = success ? colours.green : colours.red;
+  const icon = success ? figures.tick : figures.cross;
 
-  write(colour, message);
+  write(colour, `${icon} ${message}`);
 };
