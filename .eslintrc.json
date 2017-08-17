@@ -5,7 +5,6 @@
     "node": true
   },
   "rules": {
-    "import/no-dynamic-require": [0],
     "import/no-extraneous-dependencies": [2, {"devDependencies": ["gulpfile.babel.js"]}],
     "no-unused-expressions": 0,
     "quotes": [2, "single"],
@@ -17,6 +16,7 @@
     "class-methods-use-this": [0],
     "no-console": [0],
     "comma-dangle": [2, "never"],
-    "no-param-reassign": [2, { "props": false }]
+    "no-param-reassign": [2, { "props": false }],
+    "indent": [2, 2, { "MemberExpression": "off", "CallExpression": {"arguments": "first"} }]
   }
 }

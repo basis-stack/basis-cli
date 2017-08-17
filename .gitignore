@@ -8,12 +8,6 @@
 
 # Temporary build artefacts
 dist
-temp
-package
-.DS_Store
 
 # Local bash scripts
 g
-rs
-cover
-deploy

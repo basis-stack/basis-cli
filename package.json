@@ -1,5 +1,5 @@
 {
-  "name": "basis-cli",
+  "name": "@basis/cli",
   "version": "0.0.1",
   "description": "Command-line tool for scaffolding new Basis web apps",
   "main": "index.js",
@@ -7,7 +7,7 @@
     "basis": "./index.js"
   },
   "scripts": {
-    "build": "gulp build",
+    "build": "eslint gulpfile.babel.js && gulp build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node dist/index.js"
   },
@@ -32,6 +32,8 @@
     "clear": "0.0.1",
     "clui": "^0.3.6",
     "figlet": "^1.2.0",
+    "figures": "^2.0.0",
+    "git-clone": "^0.1.0",
     "inquirer": "^3.2.1",
     "minimist": "^1.2.0"
   },

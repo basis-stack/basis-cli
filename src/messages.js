@@ -3,8 +3,9 @@ import figlet from 'figlet';
 
 const colours = {
   yellow: 'yellow',
-  blue: 'blue',
-  green: 'green'
+  cyan: 'cyan',
+  green: 'green',
+  red: 'red'
 };
 
 const write = (colour, message) => {
@@ -15,10 +16,12 @@ const write = (colour, message) => {
 export const banner = () => {
 
   write(colours.yellow, figlet.textSync('Basis', { horizontalLayout: 'full' }));
-  write(colours.blue, 'This tool will create a new (web app) project template based on the Basis stack\n');
+  write(colours.cyan, 'This tool will create a new (web app) project template based on the Basis stack\n');
 };
 
-export const status = () => {
+export const status = (message, success = true) => {
 
-  /* */
+  const colour = success ? colours.green : colours.red;
+
+  write(colour, message);
 };
