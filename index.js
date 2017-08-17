@@ -1,1 +1,6 @@
-console.log('Basis generator');
+import clear from 'clear';
+
+import { banner } from './src/messages';
+
+clear();
+banner();
