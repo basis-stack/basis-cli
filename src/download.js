@@ -8,8 +8,6 @@ const getBasis = targetPath => (
 
   new Promise((resolve, reject) => {
 
-    // resolve();
-
     const gitUrl = 'https://github.com/warebrained/basis.git';
 
     clone(gitUrl, targetPath, {}, (err) => {
@@ -38,7 +36,7 @@ const finalise = (spinner, err) => {
   }
 };
 
-export default targetPath => (
+export default answers => (
 
   new Promise((resolve, reject) => {
 
@@ -46,10 +44,10 @@ export default targetPath => (
     const spinner = new Spinner('Downloading Basis template from Github...');
     spinner.start();
 
-    getBasis(targetPath).then(() => {
+    getBasis(answers.targetPath).then(() => {
 
       finalise(spinner);
-      resolve();
+      resolve(answers);
     })
     .catch((err) => {
 

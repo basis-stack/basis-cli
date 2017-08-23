@@ -8,20 +8,6 @@ import jsonfile from 'jsonfile';
 import runSequence from 'run-sequence';
 import print from 'gulp-print';
 
-// import replace from 'gulp-replace';
-// import rename from 'gulp-rename';
-// import merge from 'merge-stream';
-// import filter from 'gulp-filter';
-// import concat from 'gulp-concat';
-// import webpack from 'webpack';
-// import util from 'gulp-util';
-// import sass from 'gulp-sass';
-// import install from 'gulp-install';
-// import extReplace from 'gulp-ext-replace';
-// import tar from 'gulp-tar';
-// import gzip from 'gulp-gzip';
-// import chmod from 'gulp-chmod';
-
 const logMessagePrefix = '         +  ';
 const writeFilePrefix = 'Writing ';
 const sourceFiles = ['./index.js', './src/**/*.js'];
@@ -99,25 +85,6 @@ gulp.task('build', ['prepare:build'], (cb) => {
               ['compile', 'create:package-json'],
               cb);
 });
-
-// /* Install runtime dependencies */
-// gulp.task('install:runtime-dependencies', () => (
-
-//   gulp.src(`${config.paths.build}/package.json`)
-//       .pipe(install())
-// ));
-
-// /* Package build artifacts */
-// gulp.task('package', ['install:runtime-dependencies', 'copy:server-scripts'], () => {
-
-//   const packageFileName = `${envSettings.default.appName}.package.tar`;
-//   logMessage('Creating ', `${config.paths.package}/${packageFileName}`);
-
-//   return gulp.src(`${config.paths.build}/**/*`)
-//             .pipe(tar(packageFileName))
-//             .pipe(gzip())
-//             .pipe(gulp.dest(config.paths.package));
-// });
 
 /* Default gulp task */
 gulp.task('default', ['build'], (cb) => {

@@ -1,6 +1,6 @@
 {
-  "name": "@basis/cli",
-  "version": "0.0.1",
+  "name": "basis-cli",
+  "version": "0.0.2",
   "description": "Command-line tool for scaffolding new Basis web apps",
   "main": "index.js",
   "bin": {
@@ -36,7 +36,9 @@
     "figures": "^2.0.0",
     "git-clone": "^0.1.0",
     "inquirer": "^3.2.1",
-    "minimist": "^1.2.0"
+    "jsonfile": "^3.0.1",
+    "minimist": "^1.2.0",
+    "replace-in-file": "^2.5.4"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",

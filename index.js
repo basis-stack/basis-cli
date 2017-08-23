@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import clear from 'clear';
 
 import { banner, status } from './src/messages';
@@ -12,17 +14,14 @@ banner();
 // const args = getArgs();
 // const basePath = getCurrentDirectoryBase();
 
-getAnswers().then((answers) => {
+getAnswers()
+  .then(download)
+  .then(initialise)
+  .then(() => {
 
-  download(answers.targetPath).then(() => {
-
-    initialise(answers).then(() => {
-
-      status('Complete\n');
-    });
+    status('Complete\n');
   })
-  .catch(() => {
+  .catch((err) => {
 
-    status('Failed\n', false);
+    status(`Failed: ${err.message}\n`, false);
   });
-});

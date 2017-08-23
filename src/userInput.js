@@ -23,6 +23,12 @@ const getQuestions = () => ([
     default: answers => answers.appName,
     validate: value => validateText(value, 'Please enter a target directory without spaces or special characters')
   },
+  // {
+  //   name: 'includeFramework',
+  //   type: 'confirm',
+  //   message: 'Include framework source ?',
+  //   default: false
+  // },
   {
     name: 'includeTests',
     type: 'confirm',
