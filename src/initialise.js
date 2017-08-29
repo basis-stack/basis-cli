@@ -30,6 +30,7 @@ const tweakPackageJson = answers => (
     const packageFilePath = `${answers.targetPath}/package.json`;
     const appName = answers.appName;
     const basisText = 'basis';
+    const packageSpecsText = 'packages/**/*Spec.js ';
 
     jsonfile.readFile(packageFilePath, (readError, packageJson) => {
 
@@ -47,6 +48,8 @@ const tweakPackageJson = answers => (
       outputPackageJson.scripts.start = outputPackageJson.scripts.start.replace(basisText, appName);
       outputPackageJson.scripts.dev = outputPackageJson.scripts.dev.replace(basisText, appName);
       outputPackageJson.scripts.prod = outputPackageJson.scripts.prod.replace(basisText, appName);
+      outputPackageJson.scripts.test = outputPackageJson.scripts.test.replace(packageSpecsText, '');
+      outputPackageJson.scripts.coverage = outputPackageJson.scripts.coverage.replace(packageSpecsText, '');
 
       jsonfile.writeFile(packageFilePath, outputPackageJson, { spaces: 2 }, (writeError) => {
 
