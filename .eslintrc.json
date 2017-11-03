@@ -17,6 +17,7 @@
     "no-console": [0],
     "comma-dangle": [2, "never"],
     "no-param-reassign": [2, { "props": false }],
+    "prefer-destructuring": [0],
     "indent": [2, 2, { "MemberExpression": "off", "CallExpression": {"arguments": "first"} }]
   }
 }
