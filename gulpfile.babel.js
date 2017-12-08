@@ -81,9 +81,7 @@ gulp.task('lint', () => (
 /* Build entire solution */
 gulp.task('build', ['prepare:build'], (cb) => {
 
-  runSequence('lint',
-              ['compile', 'create:package-json'],
-              cb);
+  runSequence('lint', ['compile', 'create:package-json'], cb);
 });
 
 /* Default gulp task */
