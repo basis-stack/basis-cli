@@ -3,7 +3,6 @@
 import clear from 'clear';
 
 import { banner, status } from './src/messages';
-// import { getCurrentDirectoryBase } from './src/fsUtils';
 import { getArgs, getAnswers } from './src/userInput';
 import download from './src/download';
 import initialise from './src/initialise';
@@ -11,10 +10,9 @@ import initialise from './src/initialise';
 clear();
 banner();
 
-// const args = getArgs();
-// const basePath = getCurrentDirectoryBase();
+const args = getArgs();
 
-getAnswers()
+getAnswers(args._)
   .then(download)
   .then(initialise)
   .then(() => {
