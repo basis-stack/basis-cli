@@ -8,7 +8,7 @@ const cleanFiles = (answers) => {
 
   const pathsToNuke = ['.git', 'docs', '.codeclimate.yml', '.coveralls.yml',
     '.travis.yml', 'appveyor.yml', 'upgrade_deps.sh',
-    'LICENSE', 'README.md', 'packages'];
+    'LICENSE', 'README.md', 'packages', 'TODO', 'lerna.json', 'add', 'yarn.lock'];
 
   if (!answers.includeTests) {
 
@@ -30,6 +30,7 @@ const tweakPackageJson = answers => (
     const packageFilePath = `${answers.targetPath}/package.json`;
     const appName = answers.appName;
     const basisText = 'basis';
+    const babelNodeText = 'babel-node';
     const packageSpecsText = 'packages/**/*Spec.js ';
 
     jsonfile.readFile(packageFilePath, (readError, packageJson) => {
@@ -44,9 +45,13 @@ const tweakPackageJson = answers => (
       delete outputPackageJson.bugs;
       delete outputPackageJson.homepage;
       delete outputPackageJson.scripts['publish-coverage'];
+      delete outputPackageJson.private;
+      delete outputPackageJson.workspaces;
       outputPackageJson.name = answers.appName;
-      outputPackageJson.scripts.start = outputPackageJson.scripts.start.replace(basisText, appName);
-      outputPackageJson.scripts.dev = outputPackageJson.scripts.dev.replace(basisText, appName);
+      outputPackageJson.scripts.start = outputPackageJson.scripts.start.replace(basisText, appName)
+                                                                       .replace(babelNodeText, 'node');
+      outputPackageJson.scripts.dev = outputPackageJson.scripts.dev.replace(basisText, appName)
+                                                                   .replace(babelNodeText, 'node');
       outputPackageJson.scripts.prod = outputPackageJson.scripts.prod.replace(basisText, appName);
       outputPackageJson.scripts.test = outputPackageJson.scripts.test.replace(packageSpecsText, '');
       outputPackageJson.scripts.coverage = outputPackageJson.scripts.coverage.replace(packageSpecsText, '');

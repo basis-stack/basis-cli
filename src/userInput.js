@@ -23,7 +23,7 @@ const getQuestions = (args) => {
     message: 'Target directory',
     default: answers => answers.appName,
     validate: value => validateText(value, 'Please enter a target directory without spaces or special characters')
-  }, {
+  }, /* {
     name: 'appType',
     type: 'list',
     message: 'App Type',
@@ -32,7 +32,7 @@ const getQuestions = (args) => {
       { name: 'API only', value: 'api', short: 'API' },
       { name: 'Client only', value: 'client', short: 'CLIENT' }
     ]
-  }, {
+  }, */ {
     name: 'includeTests',
     type: 'confirm',
     message: 'Include (sample) unit tests ?',
