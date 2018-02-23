@@ -1,0 +1,8 @@
+1) Add commander package, and set up basic usage (version, help, take 1st arg as appname)
+2) Show version number under banner
+3) Skip question 1 if user has supplied an appname at the command line
+4) Add "(. for current dir)" to question 2 label
+5) Add build status and stuff to README
+6) Add a de-client question + step to strip out ALL client-side concerns
+7) Add Rollup step to bundle everything into single index.js file (in dist)
+8) Add instructions on complete message to show how to start app up

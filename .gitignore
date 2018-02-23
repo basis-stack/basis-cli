@@ -11,3 +11,5 @@ dist
 
 # Local bash scripts
 g
+build
+run

@@ -1,6 +1,6 @@
 {
   "name": "basis-cli",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Command-line tool for scaffolding new Basis web apps",
   "main": "index.js",
   "bin": {
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/warebrained/basis-cli.git"
+    "url": "git+https://github.com/basis-stack/basis-cli.git"
   },
   "keywords": [
     "basis",
@@ -24,9 +24,9 @@
   "author": "Justin Ware",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/warebrained/basis-cli/issues"
+    "url": "https://github.com/basis-stack/basis-cli/issues"
   },
-  "homepage": "https://github.com/warebrained/basis-cli#readme",
+  "homepage": "https://github.com/basis-stack/basis-cli#readme",
   "dependencies": {
     "chalk": "^2.3.0",
     "clear": "0.0.1",
@@ -44,13 +44,13 @@
     "babel-eslint": "^8.2.1",
     "babel-preset-env": "^1.6.1",
     "babel-register": "^6.26.0",
-    "eslint": "^4.17",
+    "eslint": "^4.18.1",
     "eslint-config-airbnb": "^16.1.0",
-    "eslint-config-basis-stack": "^0.0.9",
+    "eslint-config-basis-stack": "^0.0.12",
     "eslint-plugin-chai-friendly": "^0.4.1",
-    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-import": "^2.9.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.6.1",
+    "eslint-plugin-react": "^7.7.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^7.0.1",
     "gulp-eslint": "^4.0.2",

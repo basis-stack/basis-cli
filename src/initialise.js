@@ -45,6 +45,9 @@ const tweakPackageJson = answers => (
       delete outputPackageJson.bugs;
       delete outputPackageJson.homepage;
       delete outputPackageJson.scripts['publish-coverage'];
+      delete outputPackageJson.scripts['link:packages'];
+      delete outputPackageJson.scripts['unlink:packages'];
+      delete outputPackageJson.scripts['publish:packages'];
       delete outputPackageJson.private;
       delete outputPackageJson.workspaces;
       outputPackageJson.name = answers.appName;
