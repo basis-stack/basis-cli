@@ -8,7 +8,7 @@ const getBasis = targetPath => (
 
   new Promise((resolve, reject) => {
 
-    const gitUrl = 'https://github.com/warebrained/basis.git';
+    const gitUrl = 'https://github.com/basis-stack/basis.git';
 
     clone(gitUrl, targetPath, {}, (err) => {
 
