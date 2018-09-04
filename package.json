@@ -28,8 +28,8 @@
   },
   "homepage": "https://github.com/basis-stack/basis-cli#readme",
   "dependencies": {
-    "chalk": "^2.3.0",
-    "clear": "0.0.1",
+    "chalk": "^2.4.1",
+    "clear": "0.1.0",
     "clui": "^0.3.6",
     "del": "^3.0.0",
     "figlet": "^1.2.0",
@@ -38,25 +38,25 @@
     "inquirer": "^5.1.0",
     "jsonfile": "^4.0.0",
     "minimist": "^1.2.0",
-    "replace-in-file": "^3.1.1"
+    "replace-in-file": "^3.4.2"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
-    "babel-preset-env": "^1.6.1",
+    "babel-preset-env": "^1.7.0",
     "babel-register": "^6.26.0",
-    "eslint": "^4.18.1",
-    "eslint-config-airbnb": "^16.1.0",
-    "eslint-config-basis-stack": "^0.0.12",
+    "eslint": "^5.5.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-basis-stack": "^0.0.19",
     "eslint-plugin-chai-friendly": "^0.4.1",
-    "eslint-plugin-import": "^2.9.0",
-    "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.7.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.1",
     "gulp": "^3.9.1",
     "gulp-babel": "^7.0.1",
-    "gulp-eslint": "^4.0.2",
+    "gulp-eslint": "^5.0.0",
     "gulp-print": "^5.0.0",
     "jsonfile": "^4.0.0",
-    "npm-check-updates": "^2.14.0",
+    "npm-check-updates": "^2.14.2",
     "run-sequence": "^2.2.1"
   }
 }
