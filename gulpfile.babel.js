@@ -5,7 +5,6 @@ import eslint from 'gulp-eslint';
 import fs from 'fs';
 import gulp from 'gulp';
 import jsonfile from 'jsonfile';
-import runSequence from 'run-sequence';
 import print from 'gulp-print';
 
 const logMessagePrefix = '         +  ';
@@ -30,13 +29,13 @@ gulp.task('clean', (cb) => {
 });
 
 /* Prepare build directory */
-gulp.task('prepare:build', ['clean'], (cb) => {
+gulp.task('prepare:build', (cb) => {
 
   fs.mkdirSync(buildPath);
   cb();
 });
 
-// /* Prepare package.json for the npm package */
+/* Prepare package.json for the npm package */
 gulp.task('create:package-json', (cb) => {
 
   const fileName = 'package.json';
@@ -79,12 +78,9 @@ gulp.task('lint', () => (
 ));
 
 /* Build entire solution */
-gulp.task('build', ['prepare:build'], (cb) => {
-
-  runSequence('lint', ['compile', 'create:package-json'], cb);
-});
+gulp.task('build',
+  gulp.series('clean', 'prepare:build', 'lint',
+    gulp.parallel(['create:package-json', 'compile'])));
 
 /* Default gulp task */
-gulp.task('default', ['build'], (cb) => {
-
-});
+gulp.task('default', gulp.series('build'));
