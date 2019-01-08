@@ -79,8 +79,8 @@ gulp.task('lint', () => (
 
 /* Build entire solution */
 gulp.task('build',
-  gulp.series('clean', 'prepare:build', 'lint',
-    gulp.parallel(['create:package-json', 'compile'])));
+          gulp.series('clean', 'prepare:build', 'lint',
+                      gulp.parallel(['create:package-json', 'compile'])));
 
 /* Default gulp task */
 gulp.task('default', gulp.series('build'));
