@@ -17,13 +17,13 @@ const cleanFiles = (answers) => {
 
   return new Promise((resolve, reject) => {
 
-    del(pathsToNuke.map(p => `${answers.targetPath}/${p}`))
+    del(pathsToNuke.map((p) => `${answers.targetPath}/${p}`))
       .then(() => { resolve(answers); })
       .catch((err) => { reject(err); });
   });
 };
 
-const tweakPackageJson = answers => (
+const tweakPackageJson = (answers) => (
 
   new Promise((resolve, reject) => {
 
@@ -86,7 +86,7 @@ const cleanConfig = (answers) => {
   });
 };
 
-const notify = answers => (
+const notify = (answers) => (
 
   new Promise((resolve, reject) => {
 
@@ -95,7 +95,7 @@ const notify = answers => (
   })
 );
 
-export default answers => (
+export default (answers) => (
 
   cleanFiles(answers)
     .then(tweakPackageJson)

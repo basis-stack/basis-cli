@@ -11,7 +11,7 @@ const logMessagePrefix = '         +  ';
 const writeFilePrefix = 'Writing ';
 const sourceFiles = ['./index.js', './src/**/*.js'];
 const buildPath = 'dist';
-const writeFileMessage = filepath => ` ${writeFilePrefix}${filepath}`;
+const writeFileMessage = (filepath) => ` ${writeFilePrefix}${filepath}`;
 
 const logMessage = (action, context) => {
 

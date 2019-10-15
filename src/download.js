@@ -4,7 +4,7 @@ import clone from 'git-clone';
 import { status } from './messages';
 
 const Spinner = CLI.Spinner;
-const getBasis = targetPath => (
+const getBasis = (targetPath) => (
 
   new Promise((resolve, reject) => {
 
@@ -36,7 +36,7 @@ const finalise = (spinner, err) => {
   }
 };
 
-export default answers => (
+export default (answers) => (
 
   new Promise((resolve, reject) => {
 

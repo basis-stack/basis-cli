@@ -14,15 +14,15 @@ const getQuestions = (args) => {
     name: 'appName',
     type: 'input',
     message: 'App name',
-    filter: value => value.toLowerCase(),
-    default: answers => (args.length > 0 ? args[0] : ''),
-    validate: value => validateText(value, 'Please enter an application name without spaces or special characters')
+    filter: (value) => value.toLowerCase(),
+    default: (answers) => (args.length > 0 ? args[0] : ''),
+    validate: (value) => validateText(value, 'Please enter an application name without spaces or special characters')
   }, {
     name: 'targetPath',
     type: 'input',
     message: 'Target directory',
-    default: answers => answers.appName,
-    validate: value => validateText(value, 'Please enter a target directory without spaces or special characters')
+    default: (answers) => answers.appName,
+    validate: (value) => validateText(value, 'Please enter a target directory without spaces or special characters')
   }, /* {
     name: 'appType',
     type: 'list',
@@ -43,4 +43,4 @@ const getQuestions = (args) => {
 };
 
 export const getArgs = () => minimist(process.argv.slice(2));
-export const getAnswers = args => inquirer.prompt(getQuestions(args));
+export const getAnswers = (args) => inquirer.prompt(getQuestions(args));
